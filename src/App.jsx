@@ -20,10 +20,7 @@ function App() {
       alert("Please enter something");
     }
   }
-  function deleteitem(id) {
-    console.log(id);
-    setTextItem(textitem.filter((item) => item.id !== id));
-  }
+
   return (
     <>
       <div>
