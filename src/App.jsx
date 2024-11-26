@@ -12,15 +12,21 @@ function App() {
   function savetask(e) {
     e.preventDefault(); // Prevent form reload
     if (doText !== "") {
-      // id = check textitem what id right now and add that +1 
-      const lastId = textitem.length > 0 ? Math.max(...textitem.map((item) => item.id))+1 : 0; 
+      // id = check textitem what id right now and add that +1
+      const lastId =
+        textitem.length > 0
+          ? Math.max(...textitem.map((item) => item.id)) + 1
+          : 0;
       setTextItem([...textitem, { id: lastId, text: doText }]);
       setdoText(""); // Clear the input field
     } else {
       alert("Please enter something");
     }
   }
-
+  function deleteitem(id) {
+    console.log(id);
+    setTextItem(textitem.filter((item) => item.id !== id));
+  }
   return (
     <>
       <div>
