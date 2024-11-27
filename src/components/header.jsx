@@ -1,6 +1,6 @@
 import "./header.css"
 export default function header(props) {
-  const { doText, setText, savetask } = props;
+  const { doText, setText, savetask, EditText } = props;
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function header(props) {
           value={doText}
           onChange={(e) => setText(e.target.value)} // Update input state
         />
-        <button type="submit">Submit</button>
+        <button type="submit">{EditText ? "Update" : "Add"}</button>
       </form>
     </div>
     </>
