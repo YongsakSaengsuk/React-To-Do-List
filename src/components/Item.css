@@ -23,9 +23,21 @@
 .edit-btn:hover{
     background-color: #005ce6;
 }
-
+label{
+    display: flex;
+    align-items: center;
+}
 input[type="checkbox"] {
     margin-right: 10px;
     cursor: pointer;
-    
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #0077ff;
 }
