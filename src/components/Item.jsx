@@ -1,10 +1,12 @@
 export default function Item(porps) {
-    const {text, deleteitem} = porps
+    const {text, Checkitem, check} = porps
     return (
-        <div>
+        <div className={`item ${text.check ? "diabled" : ""}`}>
             <h1>Item :{text.id} {text.text}</h1>
             <button>Edit</button>
-            <button onClick={() => deleteitem(text.id)}>Delete</button>
+             <label>
+                <input type="checkbox" onClick={() => Checkitem(text.id)} />
+            </label>
         </div>
     )
 };

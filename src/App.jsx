@@ -6,8 +6,8 @@ function App() {
   const [doText, setdoText] = useState("");
   const [textitem, setTextItem] = useState([
     // State for tasks
-    { id: 1, text: "hello" },
-    { id: 2, text: "world" },
+    { id: 1, text: "hello", check: false },
+    { id: 2, text: "world", check: false },
   ]);
   function savetask(e) {
     e.preventDefault(); // Prevent form reload
@@ -23,9 +23,14 @@ function App() {
       alert("Please enter something");
     }
   }
-  function deleteitem(id) {
-    console.log(id);
-    setTextItem(textitem.filter((item) => item.id !== id));
+  function Checkitem(id) {
+    const newitem = textitem.map((item) => {
+      if (item.id === id) {
+        return { ...item, check: !item.check };
+      }
+      return item;
+    });
+    setTextItem(newitem);
   }
   return (
     <>
@@ -34,8 +39,8 @@ function App() {
         <Headers doText={doText} setText={setdoText} savetask={savetask} />
         <div className="item-container">
           {textitem.map((item) => (
-            <div className="item" key={item.id}>
-              <Item text={item} deleteitem={deleteitem} />
+            <div key={item.id}>
+              <Item text={item} Checkitem={Checkitem}/>
             </div>
           ))}
         </div>
