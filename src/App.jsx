@@ -35,7 +35,6 @@ function App() {
   return (
     <>
       <div>
-        <h1>To-Do-lists</h1>
         <Headers doText={doText} setText={setdoText} savetask={savetask} />
         <div className="item-container">
           {textitem.map((item) => (

@@ -1,7 +1,10 @@
+import "./header.css"
 export default function header(props) {
   const { doText, setText, savetask } = props;
 
   return (
+    <>
+    <h1>To Do List</h1>
     <div className="form-container">
       <form onSubmit={savetask}>
         <input
@@ -13,5 +16,6 @@ export default function header(props) {
         <button type="submit">Submit</button>
       </form>
     </div>
+    </>
   );
 }
