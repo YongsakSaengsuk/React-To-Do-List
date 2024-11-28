@@ -7,7 +7,7 @@ export default function Item(porps) {
       <div className="btn">
         <button className="edit-btn" onClick={() => Edittask(text.id)}>Edit</button>
         <label>
-          <input type="checkbox" onClick={() => Checkitem(text.id)} />
+          <input type="checkbox" onClick={() => Checkitem(text.id)} checked={text.check}/ >
         </label>
       </div>
     </div>
