@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Headers from "./components/header";
 import Item from "./components/item";
 function App() {
   const [doText, setdoText] = useState("");
   const [EditText, setEditText] = useState(null);
-  const [textitem, setTextItem] = useState([
-    // State for tasks
-    { id: 1, text: "hello", check: false },
-    { id: 2, text: "world", check: false },
-  ]);
+  const [textitem, setTextItem] = useState(
+    JSON.parse(localStorage.getItem("item")) || [],
+  );
+  useEffect(() => {
+    localStorage.setItem("item", JSON.stringify(textitem));
+  }, [textitem]);
   function savetask(e) {
     e.preventDefault();
     if (doText.trim() === "") {
